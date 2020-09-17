@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainTable"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202020"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="615dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                android:orientation="horizontal">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="146dp"
+                    android:layout_height="108dp"
+                    android:layout_gravity="bottom"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:gravity="right"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/result">
+
+                        <TextView
+                            android:id="@+id/history1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:freezesText="true"
+                            android:gravity="end"
+                            android:text="4+5 = 9"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="78dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="0dp">
+
+                        <EditText
+                            android:id="@+id/result"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:gravity="right"
+                            android:linksClickable="false"
+                            android:longClickable="false"
+                            android:paddingBottom="10dp"
+                            android:text="808"
+                            android:textColor="@android:color/white"
+                            android:textSize="50sp"
+                            android:windowSoftInputMode="stateAlwaysHidden"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/save"
+                            style="@android:style/Widget.DeviceDefault.Button.Toggle"
+                            android:layout_width="@dimen/buWSize"
+                            android:layout_height="40dp"
+                            android:freezesText="true"
+                            android:text="Save"
+                            android:textSize="10sp" />
+
+                        <Button
+                            android:id="@+id/recall"
+                            style="@android:style/Widget.DeviceDefault.Light.Button.Toggle"
+                            android:layout_width="@dimen/buWSize"
+                            android:layout_height="40dp"
+                            android:freezesText="true"
+                            android:text="ReCall"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="510dp"
+                android:layout_gravity="center">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/tableLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:id="@+id/rowOne"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/clear"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="C"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/back"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="B"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/convert"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="+/-"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/divide"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="#f98d12"
+                                android:text="÷"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowTwo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/seven"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="7"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/eight"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="8"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/nine"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="9"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/multi"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="#f98d11"
+                                android:text="x"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowThree"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/four"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="4"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/five"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="5"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/six"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="6"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/minus"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="#f98810"
+                                android:text="-"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/rowFour"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/one"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="1"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/two"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="2"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/three"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="@drawable/buttonCol"
+                                android:text="3"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+
+                            <Button
+                                android:id="@+id/plus"
+                                android:layout_width="@dimen/buWSize"
+                                android:layout_height="@dimen/buHSize"
+                                android:background="#f98510"
+                                android:text="+"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/buttonSize"
+                                android:typeface="monospace" />
+                        </TableRow>
+
+                    </TableLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:id="@+id/rowFive"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/zero"
+                            android:layout_width="205.6dp"
+                            android:layout_height="90dp"
+                            android:background="@drawable/buttonCol"
+                            android:text="0"
+                            android:textSize="@dimen/buttonSize"
+                            android:typeface="monospace" />
+
+                        <Button
+                            android:id="@+id/dot"
+                            android:layout_width="@dimen/buWSize"
+                            android:layout_height="90dp"
+                            android:background="@drawable/buttonCol"
+                            android:text="."
+                            android:textSize="@dimen/buttonSize"
+                            android:typeface="monospace" />
+
+                        <Button
+                            android:id="@+id/equal"
+                            android:layout_width="@dimen/buWSize"
+                            android:layout_height="90dp"
+                            android:height="76dp"
+                            android:background="#f97c0f"
+                            android:onClick="equalClicked"
+                            android:text="="
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/buttonSize"
+                            android:typeface="monospace" />
+
+                    </TableRow>
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="411dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="615dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
